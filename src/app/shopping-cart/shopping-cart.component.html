@@ -1,0 +1,36 @@
+<h1>Shopping Cart</h1>
+<ng-container *ngIf="cart">
+    <p>you have {{shoppigCartItemCount}} items in your cart</p>
+    <table class="table">
+      <thead>
+        <tr>
+          <th></th>
+          <th>Product</th>
+          <th>Quantity</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of keys">
+          <td>
+              <img [src] = "cart.items[product].product.imageUrl" class="thumbnail">
+          </td>
+          <td> {{cart.items[product].product.title}}</td>
+          <td> {{cart.items[product].quantity}}</td>
+          <td> {{cart.items[product].product.price * cart.items[product].quantity | currency:'USD':true}}</td>
+        </tr>
+      </tbody>
+
+      <tfoot>
+        <tr>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th>{{totalPrice | currency:'USD':true}}</th>
+        </tr>
+      </tfoot>
+    </table>
+    <div>
+      <a *ngIf="keys.length" routerLink="/checkout" class = "btn btn-primary">Check Out</a>
+    </div>
+</ng-container>
