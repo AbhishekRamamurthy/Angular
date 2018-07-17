@@ -14,3 +14,5 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
   1) Authentication using Google Login.
   2) Add, delete products.
   3) Route Protection between roles.
+  
+Images pages are attached.
